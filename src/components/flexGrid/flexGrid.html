@@ -1,3 +1,12 @@
 <div class="component">
-  <h2>{{$ctrl.text}}</h2>
+  <div class="">
+    <div  class="flex"  ng-repeat="row in $ctrl.data">
+      <div class="col-2 px2 py1 border tier1-column">
+        {{row.company}}
+      </div>
+      <div class="flex-auto border px2 py1 tier2-column" ng-repeat="column in [1,2,3,4,5]">
+        {{column}}
+      </div>
+    </div>
+  </div>
 </div>

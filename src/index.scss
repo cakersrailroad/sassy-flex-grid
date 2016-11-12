@@ -1,5 +1,21 @@
 @import "../node_modules/basscss/css/basscss.min.css";
+$background-color: #ccc !default;
 
 body {
   background-color: white;
+}
+
+.component * {
+  border-color: $background-color;
+  text-align: center;
+}
+
+.tier1-column {
+  margin-top: -1px;
+  margin-right: -1px;
+}
+
+.tier2-column {
+  margin-top: -1px;
+  margin-right: -1px;
 }

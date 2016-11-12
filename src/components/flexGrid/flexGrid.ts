@@ -7,7 +7,10 @@ class FlexGridController {
 }
 
 export const flexGrid = {
-  templateUrl: 'app/../components/flexGrid/flexGrid.html',
-  controller: FlexGridController
+  template: require('./flexGrid.html'),
+  controller: FlexGridController,
+  bindings: {
+     data: '=',
+     config: '='
+   }
 };
-
