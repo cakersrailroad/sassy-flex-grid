@@ -1,5 +1,16 @@
 @import "../node_modules/basscss/css/basscss.min.css";
+@import "../node_modules/sassypam/public/sassypam.css";
 $background-color: #ccc !default;
+@mixin declare-inline-font-face($font-family, $font-filename, $font-weight : normal, $font-style :normal, $font-stretch : normal) {
+   @font-face{
+    font-family: '#{$font-family}';
+    src: asset-data-url('#{$font-filename}.woff') format('woff'), asset-data-url('../node_modules/sassypam/vendor/assets/fonts/sms-glyphs/#{$font-filename}.ttf') format('truetype'), asset-data-url('../node_modules/sassypam/vendor/assets/fonts/sms-glyphs/#{$font-filename}.svg') format('svg'), asset-data-url('../node_modules/sassypam/vendor/assets/fonts/sms-glyphs/#{$font-filename}.eot') format('embedded-opentype');
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-stretch: $font-stretch;
+  }
+}
+@include declare-inline-font-face( 'sms-glyphs', 'sms-glyphs', 300);
 
 body {
   background-color: white;
@@ -7,15 +18,28 @@ body {
 
 .component * {
   border-color: $background-color;
-  text-align: center;
+
+  .pl4 {
+    padding-left: 3rem;
+  }
 }
 
 .tier1-column {
   margin-top: -1px;
   margin-right: -1px;
+  overflow: hidden;
 }
 
 .tier2-column {
   margin-top: -1px;
   margin-right: -1px;
+  overflow: hidden;
+}
+
+.caps {
+  letter-spacing: inherit;
+}
+
+.align-middle {
+  vertical-align: -webkit-baseline-middle;
 }

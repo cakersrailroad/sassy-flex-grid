@@ -10,7 +10,7 @@ export const flexGrid = {
   template: require('./flexGrid.html'),
   controller: FlexGridController,
   bindings: {
-     data: '=',
-     config: '='
+     data: '<',
+     config: '<'
    }
 };

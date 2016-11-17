@@ -1,11 +1,33 @@
 <div class="component">
   <div class="">
-    <div  class="flex"  ng-repeat="row in $ctrl.data">
-      <div class="col-2 px2 py1 border tier1-column">
-        {{row.company}}
+    <div class="flex">
+      <div class="{{::$ctrl.config.rowHeaderDefaults.width}} px2  left-align tier1-column"></div>
+      <div class="{{::column.width}} caps center-align  px2 table-cell tier2-column center-align overflow-auto" ng-repeat="column in $ctrl.config.columns">
+        <span class="align-sub">{{column.title}}</span>
       </div>
-      <div class="flex-auto border px2 py1 tier2-column" ng-repeat="column in [1,2,3,4,5]">
-        {{column}}
+    </div>
+    <div class="flex {{::row.rowStyles}}" ng-repeat="row in $ctrl.data track by row._id">
+      <!-- right side row headers -->
+      <div class="{{::$ctrl.config.rowHeaderDefaults.width}}
+       px2 py1 border left-align tier1-column">
+        <div class="flex pl{{::row[$ctrl.config.rowHeaderDefaults.indentKey]}}">
+          <i ng-if="row[$ctrl.config.rowHeaderDefaults.showCollapseIconKey]" class="mr1 {{::row[$ctrl.config.rowHeaderDefaults.collapseIcon]}}"></i>
+          <i ng-if="!row[$ctrl.config.rowHeaderDefaults.showCollapseIconKey]" class="mr2">&nbsp;</i>
+          <div>
+            <span class="{{::row[$ctrl.config.rowHeaderDefaults.primaryTextStyleKey]}}">
+              {{row[$ctrl.config.rowHeaderDefaults.primaryTextKey]}}
+            </span>
+            <span class="{{row[$ctrl.config.rowHeaderDefaults.secondaryTextStyleKey]}}"
+             ng-if="row[$ctrl.config.rowHeaderDefaults.secondaryTextKey]">({{row[$ctrl.config.rowHeaderDefaults.secondaryTextKey]}})</span>
+            <br/>
+            <span class="{{row[$ctrl.config.rowHeaderDefaults.tertiaryTextStyleKey]}}">{{row[$ctrl.config.rowHeaderDefaults.tertiaryTextKey]}}</span>
+          </div>
+          <i ng-if="row[$ctrl.config.rowHeaderDefaults.afterPrimaryIconKey]" class="mr1 {{::row[$ctrl.config.rowHeaderDefaults.afterPrimaryIconKey]}}"></i>
+        </div>
+      </div>
+      <!-- individual columns in the table -->
+      <div class="{{::column.columnStyles}} px2 py1 tier2-column {{::column.width}} overflow-auto" ng-repeat="column in $ctrl.config.columns">
+        <span class="align-middle">{{row[column.objectKey]}}</span>
       </div>
     </div>
   </div>
