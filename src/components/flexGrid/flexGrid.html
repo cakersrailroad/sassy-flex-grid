@@ -1,15 +1,15 @@
 <div class="component">
   <div class="">
     <div class="flex">
-      <div class="{{::$ctrl.config.rowHeaderDefaults.width}} px2  left-align tier1-column"></div>
-      <div class="{{::column.width}} caps center-align  px2 table-cell tier2-column center-align overflow-auto" ng-repeat="column in $ctrl.config.columns">
+      <div class="{{::$ctrl.config.rowHeaderDefaults.width}} px1  left-align tier1-column"></div>
+      <div class="{{::column.width}} caps center-align  px1 table-cell tier2-column center-align overflow-auto" ng-repeat="column in $ctrl.config.columns">
         <span class="align-sub">{{column.title}}</span>
       </div>
     </div>
     <div class="flex {{::row.rowStyles}}" ng-repeat="row in $ctrl.data track by row._id">
       <!-- right side row headers -->
       <div class="{{::$ctrl.config.rowHeaderDefaults.width}}
-       px2 py1 border left-align tier1-column">
+       px1 py1 border left-align tier1-column">
         <div class="flex pl{{::row[$ctrl.config.rowHeaderDefaults.indentKey]}}">
           <i ng-if="row[$ctrl.config.rowHeaderDefaults.showCollapseIconKey]" class="mr1 {{::row[$ctrl.config.rowHeaderDefaults.collapseIcon]}}"></i>
           <i ng-if="!row[$ctrl.config.rowHeaderDefaults.showCollapseIconKey]" class="mr2">&nbsp;</i>
@@ -17,8 +17,7 @@
             <span class="{{::row[$ctrl.config.rowHeaderDefaults.primaryTextStyleKey]}}">
               {{row[$ctrl.config.rowHeaderDefaults.primaryTextKey]}}
             </span>
-            <span class="{{row[$ctrl.config.rowHeaderDefaults.secondaryTextStyleKey]}}"
-             ng-if="row[$ctrl.config.rowHeaderDefaults.secondaryTextKey]">({{row[$ctrl.config.rowHeaderDefaults.secondaryTextKey]}})</span>
+            <span class="{{row[$ctrl.config.rowHeaderDefaults.secondaryTextStyleKey]}}" ng-if="row[$ctrl.config.rowHeaderDefaults.secondaryTextKey]">({{row[$ctrl.config.rowHeaderDefaults.secondaryTextKey]}})</span>
             <br/>
             <span class="{{row[$ctrl.config.rowHeaderDefaults.tertiaryTextStyleKey]}}">{{row[$ctrl.config.rowHeaderDefaults.tertiaryTextKey]}}</span>
           </div>
@@ -26,8 +25,12 @@
         </div>
       </div>
       <!-- individual columns in the table -->
-      <div class="{{::column.columnStyles}} px2 py1 tier2-column {{::column.width}} overflow-auto" ng-repeat="column in $ctrl.config.columns">
-        <span class="align-middle">{{row[column.objectKey]}}</span>
+      <div class="{{::column.columnStyles}} px1 py1 tier2-column {{::column.width}} overflow-auto" ng-repeat="column in $ctrl.config.columns">
+        <span ng-if="column.format === 'none'" class="align-middle">{{row[column.objectKey]}}</span>
+        <span ng-if="column.format === 'percentOldStyle'" class="align-middle">{{row[column.objectKey] | percentOldStyle}}</span>
+        <span ng-if="column.format === 'currencyOldStyle'" class="align-middle">{{row[column.objectKey] | currencyOldStyle}}</span>
+        <span ng-if="column.format === 'numberOldStyle'" class="align-middle">{{row[column.objectKey] | numberOldStyle}}</span>
+        <span ng-if="column.format === 'convertStringToNumber'" class="align-middle">{{row[column.objectKey] | convertStringToNumber}}</span>
       </div>
     </div>
   </div>

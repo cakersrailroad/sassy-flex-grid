@@ -3,6 +3,7 @@
     "angular": "^1.5.0"
   },
   "devDependencies": {
+    "sassy-numbers-utility": "github:cinbcuniversal/sassy-number-utility",
     "angular-mocks": "^1.5.0-beta.2",
     "autoprefixer": "^6.2.2",
     "babel-eslint": "^6.0.2",

@@ -333,7 +333,7 @@
     "columns": [{
       "title": "16/17 Quintile",
       "type": "number",
-      "format": "percent",
+      "format": "numberOldStyle",
       "editable": true,
       "callbackKey": "16/17Callback",
       "objectKey": "16/17 Quintile",
@@ -343,7 +343,7 @@
     }, {
       "title": "16/17 Dollars",
       "type": "number",
-      "format": "percent",
+      "format": "currencyOldStyle",
       "editable": true,
       "callbackKey": "16/17Callback",
       "objectKey": "16/17 Dollars",
@@ -352,8 +352,8 @@
       "columnStyles": "right-align border-top border-bottom border-right border-left"
     }, {
       "title": "17/18 Upfront Strategy",
-      "type": "number",
-      "format": "percent",
+      "type": "text",
+      "format": "none",
       "editable": true,
       "callbackKey": "16/17Callback",
       "objectKey": "17/18 Upfront Strategy",
@@ -363,7 +363,7 @@
     }, {
       "title": "16/17 Guar cpm",
       "type": "number",
-      "format": "percent",
+      "format": "percentOldStyle",
       "editable": true,
       "callbackKey": "16/17Callback",
       "objectKey": "16/17 Guar cpm",
@@ -380,16 +380,16 @@
       "columnStyles": "center border-top border-bottom border-right"
     }, {
       "title": "17/18 PAM dollars",
-      "type": "text",
-      "format": "none",
+      "type": "number",
+      "format": "currencyOldStyle",
       "editable": false,
       "objectKey": "17/18 PAM dollars",
       "width": "flex-1",
       "columnStyles": "right-align border-top border-bottom border-right border-left"
     }, {
       "title": "17/18 Scenario dollars",
-      "type": "text",
-      "format": "none",
+      "type": "number",
+      "format": "currencyOldStyle",
       "editable": false,
       "objectKey": "17/18 Scenario dollars",
       "width": "flex-1",
@@ -397,7 +397,7 @@
     }, {
       "title": "16/17 % RC",
       "type": "number",
-      "format": "percent",
+      "format": "percentOldStyle",
       "editable": true,
       "callbackKey": "16/17Callback",
       "objectKey": "16/17 % RC",
@@ -407,7 +407,7 @@
     }, {
       "title": "17/18 Rate of change",
       "type": "number",
-      "format": "dollars",
+      "format": "percentOldStyle",
       "callbackKey": "pamDollars",
       "objectKey": "17/18 Rate of change",
       "styleChangeOnEdit": "bold",
@@ -416,7 +416,7 @@
     }, {
       "title": "17/18 client mix",
       "type": "number",
-      "format": "dollars",
+      "format": "currencyOldStyle",
       "callbackKey": "pamDollars",
       "objectKey": "17/18 client mix",
       "styleChangeOnEdit": "bold",
@@ -425,12 +425,12 @@
     }, {
       "title": "17/18 effective ROC",
       "type": "number",
-      "format": "dollars",
+      "format": "currencyOldStyle",
       "callbackKey": "pamDollars",
       "objectKey": "17/18 effective ROC",
       "styleChangeOnEdit": "bold",
       "width": "flex-1",
-      "columnStyles": "right-align border-top border-bottom border-right"
+      "columnStyles": "center-align border-top border-bottom border-right"
     }]
   }
 }
