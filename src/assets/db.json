@@ -307,7 +307,7 @@
       "collapseCallback": "collapseClicked",
       "collapseIcon": "collapseIcon",
       "indentKey": "indent",
-      "width": "flex-3",
+      "width": "flex-5",
       "isFilterdKey": "filterKey",
       "beforePrimaryIconKey": "name-of-key",
       "afterPrimaryIconKey": "afterPrimaryIcon",
@@ -316,17 +316,17 @@
       "tertiaryTextStyleKey": "tertiaryTextStyle"
     },
     "rowConfig": {
-      "onHoverStyle": "lt-blue-bg"
+      "onHoverStyle": "lt-blue-hover-bg"
     },
     "columnsDefaults": {
       "type": "number",
-      "width": "flex-1",
+      "width": "flex-2",
       "align": "center",
       "border": "no-border-left",
       "format": "none",
       "percision": "2",
       "textStyle": "uppercase",
-      "editable": true,
+      "editable": false,
       "styleChangeOnEdit": "bold",
       "callbackKey": "16/17Callback"
     },
@@ -334,41 +334,41 @@
       "title": "16/17 Quintile",
       "type": "number",
       "format": "numberOldStyle",
-      "editable": true,
+      "editable": false,
       "callbackKey": "16/17Callback",
       "objectKey": "16/17 Quintile",
-      "violator": "triangle",
-      "width": "flex-1",
+      "width": "flex-2",
       "columnStyles": "center-align border-top border-bottom border-right border-left"
     }, {
       "title": "16/17 Dollars",
       "type": "number",
       "format": "currencyOldStyle",
       "editable": true,
-      "callbackKey": "16/17Callback",
+      "editableColor": "editable-bg",
+      "callbackKey": "callback1617Guar",
       "objectKey": "16/17 Dollars",
       "violator": "triangle",
-      "width": "flex-1",
+      "width": "flex-2",
       "columnStyles": "right-align border-top border-bottom border-right border-left"
     }, {
       "title": "17/18 Upfront Strategy",
       "type": "text",
       "format": "none",
-      "editable": true,
+      "editable": false,
       "callbackKey": "16/17Callback",
       "objectKey": "17/18 Upfront Strategy",
       "violator": "triangle",
-      "width": "flex-1",
+      "width": "flex-2",
       "columnStyles": "center-align caps border-top border-bottom border-right border-left"
     }, {
       "title": "16/17 Guar cpm",
       "type": "number",
       "format": "percentOldStyle",
-      "editable": true,
+      "editable": false,
       "callbackKey": "16/17Callback",
       "objectKey": "16/17 Guar cpm",
       "violator": "triangle",
-      "width": "flex-1",
+      "width": "flex-2",
       "columnStyles": "right-align border-top border-bottom border-left"
     }, {
       "title": "GUAR DEMO",
@@ -376,7 +376,7 @@
       "format": "none",
       "editable": false,
       "objectKey": "Guar demo",
-      "width": "flex-1",
+      "width": "flex-2",
       "columnStyles": "center border-top border-bottom border-right"
     }, {
       "title": "17/18 PAM dollars",
@@ -384,7 +384,7 @@
       "format": "currencyOldStyle",
       "editable": false,
       "objectKey": "17/18 PAM dollars",
-      "width": "flex-1",
+      "width": "flex-2",
       "columnStyles": "right-align border-top border-bottom border-right border-left"
     }, {
       "title": "17/18 Scenario dollars",
@@ -392,13 +392,13 @@
       "format": "currencyOldStyle",
       "editable": false,
       "objectKey": "17/18 Scenario dollars",
-      "width": "flex-1",
+      "width": "flex-2",
       "columnStyles": "right-align border-top border-bottom border-right border-left"
     }, {
       "title": "16/17 % RC",
       "type": "number",
       "format": "percentOldStyle",
-      "editable": true,
+      "editable": false,
       "callbackKey": "16/17Callback",
       "objectKey": "16/17 % RC",
       "violator": "triangle",
@@ -411,13 +411,14 @@
       "callbackKey": "pamDollars",
       "objectKey": "17/18 Rate of change",
       "styleChangeOnEdit": "bold",
-      "width": "flex-1",
+      "width": "flex-2",
       "columnStyles": "right-align border-top border-bottom border-right border-left"
     }, {
       "title": "17/18 client mix",
       "type": "number",
       "format": "currencyOldStyle",
-      "callbackKey": "pamDollars",
+      "editable": true,
+      "callbackKey": "clientMix",
       "objectKey": "17/18 client mix",
       "styleChangeOnEdit": "bold",
       "width": "flex-1",
@@ -426,10 +427,11 @@
       "title": "17/18 effective ROC",
       "type": "number",
       "format": "currencyOldStyle",
-      "callbackKey": "pamDollars",
+      "editable": true,
+      "callbackKey": "effectiveROC",
       "objectKey": "17/18 effective ROC",
       "styleChangeOnEdit": "bold",
-      "width": "flex-1",
+      "width": "flex-2",
       "columnStyles": "center-align border-top border-bottom border-right"
     }]
   }
