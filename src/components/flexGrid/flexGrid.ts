@@ -1,3 +1,10 @@
+
+'use strict';
+const angular = require('angular');
+
+import './flexGrid.scss';
+
+
 class FlexGridController {
   public text: string;
   callback: Object;
@@ -6,8 +13,8 @@ class FlexGridController {
   rowSelectionHandler(obj) {
     console.log(obj)
   }
-  updateColumnValue(obj, value, c) {
-    this.callback[c.callbackKey](obj, value);
+  updateColumnValue(obj, value, column) {
+    this.callback[column.callbackKey](obj, value);
   }
 }
 
@@ -20,3 +27,7 @@ export const flexGrid = {
     callback: '='
   }
 };
+
+export default angular.module('flexGridComponent', [])
+  .component('flexGrid', flexGrid)
+  .name;

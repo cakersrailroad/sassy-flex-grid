@@ -1,5 +1,6 @@
 @import "../node_modules/basscss/css/basscss.min.css";
 @import "../node_modules/sassypam/public/sassypam.css";
+@import "./src/components/flexGrid/flexGrid.scss";
 $background-color: #ccc !default;
 @mixin declare-inline-font-face($font-family, $font-filename, $font-weight: normal, $font-style :normal, $font-stretch: normal) {
   @font-face {
@@ -21,72 +22,4 @@ $select-orange: red !default;
 300);
 body {
   background-color: white;
-}
-
-.component * {
-  border-color: $background-color;
-  .pl4 {
-    padding-left: 3rem;
-  }
-}
-
-.tier1-column {
-  margin-top: -1px;
-  margin-right: -1px;
-  overflow: hidden;
-}
-
-.tier2-column {
-  margin-top: -1px;
-  margin-right: -1px;
-  overflow: hidden;
-}
-
-.caps {
-  letter-spacing: inherit;
-}
-
-.align-middle {
-  vertical-align: -webkit-baseline-middle;
-}
-
-.end-align {
-  display: -webkit-box;
-  -webkit-box-pack: end;
-  -webkit-box-align: end;
-}
-
-.lt-blue-hover-bg:hover {
-  background: lightblue;
-  .editable-bg {
-    background-color: transparent !important;
-  }
-}
-
-.selectable-cell {
-  &.enabled {
-    cursor: pointer;
-    &:hover,
-    &.enabled.selected:hover {
-      background-color: $hover-orange;
-    }
-    &.selected {
-      background-color: $select-orange;
-    }
-  }
-  &.column.enabled {
-    cursor: pointer;
-    .sms-glyph-icon_box-checked,
-    .sms-glyph-icon_box-empty {
-      margin-top: 5px;
-    }
-    &:hover,
-    &.selected,
-    &.selected:hover {
-      background-color: transparent;
-    }
-  }
-  &.dirty {
-    font-weight: bold;
-  }
 }

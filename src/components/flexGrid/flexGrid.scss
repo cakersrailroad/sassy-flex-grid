@@ -1,0 +1,39 @@
+.component * {
+  border-color: #ccc;
+  .pl4 {
+    padding-left: 3rem;
+  }
+}
+
+.tier1-column {
+  margin-top: -1px;
+  margin-right: -1px;
+  overflow: hidden;
+}
+
+.tier2-column {
+  margin-top: -1px;
+  margin-right: -1px;
+  overflow: hidden;
+}
+
+.caps {
+  letter-spacing: inherit;
+}
+
+.align-middle {
+  vertical-align: -webkit-baseline-middle;
+}
+
+.end-align {
+  display: -webkit-box;
+  -webkit-box-pack: end;
+  -webkit-box-align: end;
+}
+
+.lt-blue-hover-bg:hover {
+  background: lightblue;
+  .editable-bg {
+    background-color: transparent !important;
+  }
+}

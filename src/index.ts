@@ -15,13 +15,12 @@ import '../node_modules/sassy-input/inputs/inputField.component.js';
 import '../node_modules/sassy-input/inputs/selectableCell.directive.js';
 
 import { hello } from './app/hello';
-import { flexGrid } from './components/flexGrid/flexGrid';
+import  flexGridComponent  from './components/flexGrid/flexGrid';
 
 import './index.scss';
 
 export const app: string = 'app';
 
 angular
-    .module(app, ['NumbersUtil', 'thirdparty', 'InputManager'])
-    .component('app', hello)
-    .component('flexGrid', flexGrid);
+    .module(app, [flexGridComponent, 'NumbersUtil', 'thirdparty', 'InputManager'])
+    .component('app', hello);
