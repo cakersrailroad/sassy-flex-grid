@@ -276,7 +276,7 @@
       "tertiaryTextStyleKey": "tertiaryTextStyle"
     },
     "rowConfig": {
-      "onHoverStyle": "lt-blue-hover-bg"
+      "rowStyles": "lt-blue-hover-bg"
     },
     "columnsDefaults": {
       "type": "number",

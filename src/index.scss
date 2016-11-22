@@ -15,6 +15,10 @@ $background-color: #ccc !default;
   }
 }
 
+body {
+  overflow-y: auto;
+}
+
 $hover-orange: orange !default;
 $select-orange: red !default;
 @include declare-inline-font-face( 'sms-glyphs',

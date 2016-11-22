@@ -2,16 +2,18 @@
   <div class="">
     <div class="flex">
       <div class="{{::$ctrl.config.rowHeaderDefaults.width}} px1  left-align tier1-column"></div>
-      <div class="{{::column.width}} caps end-align px1 py1 table-cell center tier2-column overflow-auto" ng-repeat="column in $ctrl.config.columns">
-        <span class="end-align">{{column.title}}</span>
+      <div class="{{::column.width}} caps end-align px1 py1 table-cell center tier2-column overflow-auto" ng-repeat="column in $ctrl.config.columns track by $index">
+        <span class="end-align">{{::column.title}}</span>
       </div>
     </div>
-    <div class="flex {{::row.rowStyles}} {{$ctrl.config.rowConfig.onHoverStyle}}" ng-repeat="row in $ctrl.data track by row._id">
+    <div class="flex {{::row.rowStyles}} {{::$ctrl.config.rowConfig.rowStyles}}" ng-repeat="row in $ctrl.data track by row._id"
+      ng-if="!row[$ctrl.config.rowHeaderDefaults.isCollapseKey]">
       <!-- right side row headers -->
       <div class="{{::$ctrl.config.rowHeaderDefaults.width}}
        px1 py1 border left-align tier1-column">
         <div class="flex pl{{::row[$ctrl.config.rowHeaderDefaults.indentKey]}}">
-          <i ng-if="row[$ctrl.config.rowHeaderDefaults.showCollapseIconKey]" class="mr1 {{::row[$ctrl.config.rowHeaderDefaults.collapseIcon]}}"></i>
+          <i ng-if="row[$ctrl.config.rowHeaderDefaults.showCollapseIconKey]" class="mr1 {{::row[$ctrl.config.rowHeaderDefaults.collapseIcon]}}"
+            ng-click="$ctrl.callCollapse(row)"></i>
           <i ng-if="!row[$ctrl.config.rowHeaderDefaults.showCollapseIconKey]" class="mr2">&nbsp;</i>
           <div>
             <span class="{{::row[$ctrl.config.rowHeaderDefaults.primaryTextStyleKey]}}">
@@ -27,16 +29,15 @@
       <!-- individual columns in the table -->
       <div class="{{::column.columnStyles}} px1 py1 tier2-column {{::column.width}} overflow-auto" ng-class="{'editable-bg': column.editable}"
         ng-repeat="column in $ctrl.config.columns track by $index">
-        <div class=" selectable-cell " ng-if="!column.editable" ng-class="{enabled: $ctrl.cellSelectionEnabled, disabled: !$ctrl.cellSelectionEnabled}"
-          type="{{column.objectKey}}" index="row._id" selected="true" callback="$ctrl.rowSelectionHandler(obj)" selectable-cell>
-          <span ng-if="column.format === 'none'" class="align-middle">{{row[column.objectKey]}}</span>
-          <span ng-if="column.format === 'percentOldStyle'" class="align-middle">{{row[column.objectKey] | percentOldStyle}}</span>
-          <span ng-if="column.format === 'currencyOldStyle'" class="align-middle">{{row[column.objectKey] | currencyOldStyle}}</span>
-          <span ng-if="column.format === 'numberOldStyle'" class="align-middle">{{row[column.objectKey] | numberOldStyle}}</span>
-          <span ng-if="column.format === 'convertStringToNumber'" class="align-middle">{{row[column.objectKey] | convertStringToNumber}}</span>
+        <div class=" selectable-cell " ng-if="!column.editable" ng-class="{enabled: $ctrl.cellSelectionEnabled, disabled: !$ctrl.cellSelectionEnabled}">
+          <span ng-if="::column.format === 'none'" class="align-middle">{{row[column.objectKey]}}</span>
+          <span ng-if="::column.format === 'percentOldStyle'" class="align-middle">{{row[column.objectKey] | percentOldStyle}}</span>
+          <span ng-if="::column.format === 'currencyOldStyle'" class="align-middle">{{row[column.objectKey] | currencyOldStyle}}</span>
+          <span ng-if="::column.format === 'numberOldStyle'" class="align-middle">{{row[column.objectKey] | numberOldStyle}}</span>
+          <span ng-if="::column.format === 'convertStringToNumber'" class="align-middle">{{row[column.objectKey] | convertStringToNumber}}</span>
         </div>
-        <div ng-if="column.editable" class="edit-input-text">
-          <edit-input value="row[column.objectKey]" property-to-update="{{row[column.objectKey]}}" record="row" action="$ctrl.updateColumnValue(record, elementValue, column)"
+        <div ng-if="::column.editable" class="edit-input-text">
+          <edit-input value="row[column.objectKey]" property-to-update="row[column.objectKey]" record="row" action="$ctrl.updateColumnValue(record, elementValue, column)"
             display-format='{"filter": "{{column.format}}"}' editing-format='{"filter": "stringToNumber", "precision": 0}'>
           </edit-input>
         </div>

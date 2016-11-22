@@ -1,0 +1,115 @@
+{
+  "config": {
+    "rowHeaderDefaults": {
+      "objectKey": "name-of-the-header",
+      "primaryTextKey": "parent_agency_id",
+      "secondaryTextKey": "agency_id",
+      "tertiaryTextKey": "created_at",
+      "isCollapseKey": "_isItCollapsed",
+      "showCollapseIconKey": "_showCollapseIcon",
+      "collapseCallback": "_collapseClicked",
+      "collapseIcon": "_collapseIcon",
+      "indentKey": "_indent",
+      "width": "flex-5",
+      "isFilterdKey": "_filterKey",
+      "beforePrimaryIconKey": "name-of-key",
+      "afterPrimaryIconKey": "_afterPrimaryIcon",
+      "primaryTextStyleKey": "_primaryTextStyle",
+      "secondaryTextStyleKey": "_secondaryTextStyle",
+      "tertiaryTextStyleKey": "_tertiaryTextStyle"
+    },
+    "rowConfig": {
+      "rowStyles": "lt-blue-hover-bg"
+    },
+    "columnsDefaults": {
+      "type": "number",
+      "width": "flex-2",
+      "align": "center",
+      "border": "no-border-left",
+      "format": "none",
+      "percision": "2",
+      "textStyle": "uppercase",
+      "editable": false,
+      "styleChangeOnEdit": "bold",
+      "callbackKey": "16/17Callback"
+    },
+    "columns": [{
+      "title": "ly guaranteed imp",
+      "type": "number",
+      "format": "numberOldStyle",
+      "editable": false,
+      "callbackKey": "16/17Callback",
+      "objectKey": "ly_guaranteed_imp",
+      "width": "flex-2",
+      "columnStyles": "center-align border-top border-bottom border-right border-left"
+    }, {
+      "title": "rc avg cpm",
+      "type": "number",
+      "format": "numberOldStyle",
+      "editable": false,
+      "callbackKey": "16/17Callback",
+      "objectKey": "rc_avg_cpm",
+      "width": "flex-2",
+      "columnStyles": "center-align border-top border-bottom border-right border-left"
+    }, {
+      "title": "deal phase",
+      "type": "string",
+      "format": "none",
+      "editable": false,
+      "callbackKey": "16/17Callback",
+      "objectKey": "deal_phase",
+      "width": "flex-2",
+      "columnStyles": "center-align border-top border-bottom border-right border-left"
+    }, {
+      "title": "16/17 Dollars",
+      "type": "number",
+      "format": "currencyOldStyle",
+      "editable": true,
+      "editableColor": "editable-bg",
+      "callbackKey": "normalDollars",
+      "objectKey": "normal_dollars",
+      "width": "flex-2",
+      "columnStyles": "right-align border-top border-bottom border-right border-left"
+    }, {
+      "title": "cy budget dollars",
+      "type": "number",
+      "format": "currencyOldStyle",
+      "editable": false,
+      "editableColor": "editable-bg",
+      "callbackKey": "callback1617Guar",
+      "objectKey": "cy_budget_dollars",
+      "width": "flex-2",
+      "columnStyles": "right-align border-top border-bottom border-right border-left"
+    }, {
+      "title": "ly budget dollars",
+      "type": "number",
+      "format": "currencyOldStyle",
+      "editable": false,
+      "editableColor": "editable-bg",
+      "callbackKey": "callback1617Guar",
+      "objectKey": "ly_budget_dollars",
+      "width": "flex-2",
+      "columnStyles": "right-align border-top border-bottom border-right border-left"
+    }, {
+      "title": "base guaranteed imp",
+      "type": "number",
+      "format": "percentOldStyle",
+      "editable": true,
+      "editableColor": "editable-bg",
+      "callbackKey": "baseGuaranteedImp",
+      "objectKey": "base_guaranteed_imp",
+      "width": "flex-2",
+      "columnStyles": "right-align border-top border-bottom border-right border-left"
+    }, {
+      "title": "cy guaranteed imp",
+      "type": "number",
+      "format": "percentOldStyle",
+      "editable": true,
+      "editableColor": "editable-bg",
+      "callbackKey": "cyGuaranteedImp",
+      "objectKey": "cy_guaranteed_imp",
+      "width": "flex-2",
+      "columnStyles": "right-align border-top border-bottom border-right border-left"
+    }]
+  }
+}
