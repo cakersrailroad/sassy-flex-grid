@@ -1,4 +1,7 @@
 .tmp/
 coverage/
-dist/
+dist/**
+!dist/flexGridComponent-app.js
+!dist/flexGridComponent-vendor.js
+!dist/flexGridComponent-app.css
 node_modules/

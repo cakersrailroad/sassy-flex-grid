@@ -47,7 +47,7 @@ module.exports = {
         warnings: false
       } // eslint-disable-line camelcase
     }),
-    new ExtractTextPlugin('flexGrid.css'),
+    new ExtractTextPlugin('flexGridComponent-app.css'),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'
     })
