@@ -2,9 +2,6 @@
 # Sassy Flex Grid
 A complete Angular.js 1.5.x flexable and customizable grid
 
-![alt text](https://github.com/CINBCUniversal/Multi-Select-Typeahead/blob/master/screen_shots/nonSelectedPlan.png)
-![alt text](https://github.com/CINBCUniversal/Multi-Select-Typeahead/blob/master/screen_shots/selectedPlan.png)
-
 #Getting started
 Grab the sources with  npm or download from [Github:](git@github.com:CINBCUniversal/sassy-flex-grid.git):
 
@@ -160,8 +157,7 @@ For example :
               }
             }
 
-
-
+```
 
 ## Row Header Defaults Configs
 |Param 	|Details   	|
@@ -182,9 +178,6 @@ For example :
 |width | flexbox with in the data set can be flex-1 .. flex-6 |
 |isFilterdKey | A key to the boolean value in the dataset|
 
-
-
-
 ## Development server
 Run `npm run serve` for a dev server. Navigate to `http://localhost:3000/`. The app will automatically reload if you change any of the source files.
 
@@ -192,4 +185,7 @@ Run `npm run serve` for a dev server. Navigate to `http://localhost:3000/`. The 
 ## Build
 
 Run `gulp build:component` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
+
+
 
