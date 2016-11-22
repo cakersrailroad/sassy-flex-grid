@@ -10,9 +10,9 @@ import '../node_modules/sassy-numbers-utility/numbers/currencyOldStyle.filter.js
 import '../node_modules/sassy-numbers-utility/numbers/numberConversion.service.js';
 import '../node_modules/sassy-numbers-utility/numbers/numberOldStyle.filter.js';
 import '../node_modules/sassy-numbers-utility/numbers/percentOldStyle.filter.js';
-import '../node_modules/sassy-input/inputs/inputManager.module.js';
-import '../node_modules/sassy-input/inputs/inputField.component.js';
-import '../node_modules/sassy-input/inputs/selectableCell.directive.js';
+import '../node_modules/sassy-rxjs-input/inputs/inputManager.module.js';
+import '../node_modules/sassy-rxjs-input/inputs/inputField.component.js';
+import '../node_modules/sassy-rxjs-input/inputs/selectableCell.directive.js';
 
 import { hello } from './app/hello';
 import  flexGridComponent  from './components/flexGrid/flexGrid';
