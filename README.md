@@ -6,7 +6,7 @@ A complete Angular.js 1.5.x flexable and customizable grid
 Grab the sources with  npm or download from [Github:](git@github.com:CINBCUniversal/sassy-flex-grid.git):
 
 
-Install "multi-select-autocomplete" with npm and save it in your package.json.
+Install "flexGridComponent" with npm and save it in your package.json.
 For Example :
 
 ```sh
