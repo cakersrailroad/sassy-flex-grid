@@ -9,35 +9,30 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
   module: {
-    loaders: [
-      {
-        test: /.json$/,
-        loaders: [
-          'json'
-        ]
-      },
-      {
-        test: /\.(css|scss)$/,
-        loaders: ExtractTextPlugin.extract({
-          fallbackLoader: 'style',
-          loader: 'css?minimize!sass!postcss'
-        })
-      },
-      {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        loaders: [
-          'ng-annotate',
-          'ts'
-        ]
-      },
-      {
-        test: /.html$/,
-        loaders: [
-          'html'
-        ]
-      }
-    ]
+    loaders: [{
+      test: /.json$/,
+      loaders: [
+        'json'
+      ]
+    }, {
+      test: /\.(css|scss)$/,
+      loaders: ExtractTextPlugin.extract({
+        fallbackLoader: 'style',
+        loader: 'css?minimize!sass!postcss'
+      })
+    }, {
+      test: /\.ts$/,
+      exclude: /node_modules/,
+      loaders: [
+        'ng-annotate',
+        'ts'
+      ]
+    }, {
+      test: /.html$/,
+      loaders: [
+        'html'
+      ]
+    }]
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
@@ -46,14 +41,20 @@ module.exports = {
       template: conf.path.src('index.html')
     }),
     new webpack.optimize.UglifyJsPlugin({
-      compress: {unused: true, dead_code: true, warnings: false} // eslint-disable-line camelcase
+      compress: {
+        unused: true,
+        dead_code: true,
+        warnings: false
+      } // eslint-disable-line camelcase
     }),
     new ExtractTextPlugin('index-[contenthash].css'),
-    new webpack.optimize.CommonsChunkPlugin({name: 'vendor'})
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
+    })
   ],
   postcss: () => [autoprefixer],
   output: {
-    path: path.join(process.cwd(), conf.paths.dist),
+    path: path.join(process.cwd(), conf.paths.docs),
     filename: '[name]-[hash].js'
   },
   resolve: {
