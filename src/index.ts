@@ -3,7 +3,7 @@
 import * as angular from 'angular';
 
 import  '../node_modules/sassy-numbers-utility/numbers/numbers.module.js';
-import  '../node_modules/sassy-third-party-injectable/thirdparty.js'
+import  '../node_modules/sassy-third-party-injectable/thirdparty.js';
 
 import '../node_modules/sassy-numbers-utility/numbers/convertStringToNumber.filter.js';
 import '../node_modules/sassy-numbers-utility/numbers/currencyOldStyle.filter.js';

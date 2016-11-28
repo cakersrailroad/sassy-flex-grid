@@ -1,40 +1,58 @@
 export const hello: angular.IComponentOptions = {
   template: require('./hello.html'),
-  controller: function ($http: angular.IHttpService, $scope: angular.IScope, _) { // eslint-disable-line babel/object-shorthand
+  controller: function ($http: angular.IHttpService, $scope: angular.IScope, _: any) { // eslint-disable-line babel/object-shorthand
 
-    $http.get('/assets/db.json').then(dat => this.data = dat.data);
+    /**
+      * setting up the inital config data for portal modeling example
+      */
     $http.get('/assets/portal_modeling.config.json').then(dat => {
       this.configData = dat.data;
     });
+
+    /**
+     * setting up the inital data set for portal modeling example
+     */
     $http.get('/assets/portal_modeling.json').then(dat => {
-      let portalModeling = []
+      let portalModeling = [];
       _.each(dat.data, (property, i) => {
-        if (i < 20) {
+        if (i < 200) {
           property._id = i;
-          property._isFiltered = true;
-          property._collapseIcon = "sms-glyph-arrow_carrot-2dwnn_alt";
           property._indent = Math.floor(Math.random() * 4);
-          //collapse configs
-          property._showCollapseIcon = property._indent < 3; //boolean
-          property._collapseClicked = "collapseCallback";
+
+          property._isFiltered = true;
+          property._collapseClicked = 'collapseCallback';
           property._isItCollapsed = property._indent !== 0;
 
-          property._beforePrimaryIcon = "star";
-          property._afterPrimaryIcon = "delete";
+          property._beforePrimaryIcon = 'star';
+          property._afterPrimaryIcon = 'delete';
 
-          property._hoverIconPrimary = i % 2 === 0 ? "sms-glyph-arrow_carrot-2dwnn_alt": '';
-          property._hoverIconSecondary = i % 3 === 0 ? "sms-glyph-arrow_carrot-2dwnn_alt h3": '';
+          property._hoverIconPrimary = i % 2 === 0 ? 'sms-glyph-arrow_carrot-2dwnn_alt' : '';
+          property._hoverIconSecondary = i % 3 === 0 ? 'sms-glyph-arrow_carrot-2dwnn_alt h3' : '';
 
 
           portalModeling.push(property);
         }
       });
+      portalModeling = _.each(portalModeling, (d, i) => {
+        const nextD = i + 1;
+        if (portalModeling[nextD]) {
+          if (portalModeling[i]._indent < portalModeling[nextD]._indent) {
+            d._collapseIcon = 'sms-glyph-arrow_carrot-2dwnn_alt';
+            d._showCollapseIcon = true;
+          } else {
+            d._showCollapseIcon = false;
+
+          }
+        }
+      });
       this.portalModeling = portalModeling;
-      let parentAgency = _.where(this.portalModeling, {_indent: 0});
-      console.log(parentAgency.length)
+      let parentAgency = _.where(this.portalModeling, { _indent: 0 });
+      console.log(`length of parent agency shown is ${parentAgency.length}`);
     });
 
-
+    /**
+     * callback api for portal modeling example
+     */
     this.portalModelingCallback = {
       normalDollars: (changeObj: any, change: number) => {
         var index = this.portalModeling.findIndex(function (o: any) { return o._id === changeObj._id; });
@@ -65,24 +83,6 @@ export const hello: angular.IComponentOptions = {
         });
         $scope.$evalAsync();
 
-      }
-    }
-
-    this.callBackApi = {
-      callback1617Guar: (changeObj: any, change: number) => {
-        var index = this.data.data.findIndex(function (o: any) { return o._id === changeObj._id; });
-        this.data.data[index]['16/17 Dollars'] = change;
-        $scope.$evalAsync();
-      },
-      clientMix: (changeObj: any, change: number) => {
-        var index = this.data.data.findIndex(function (o: any) { return o._id === changeObj._id; });
-        this.data.data[index]['17/18 client mix'] = change;
-        $scope.$evalAsync();
-      },
-      effectiveROC: (changeObj: any, change: number) => {
-        var index = this.data.data.findIndex(function (o: any) { return o._id === changeObj._id; });
-        this.data.data[index]['17/18 effective ROC'] = change;
-        $scope.$evalAsync();
       }
     };
   }

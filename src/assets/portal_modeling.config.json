@@ -25,7 +25,7 @@
     },
     "columnsDefaults": {
       "type": "number",
-      "columnHeaderStyles": "bold grey-bg type-xs",
+      "columnHeaderStyles": "caps bold grey-bg type-xs center-align",
       "width": "flex-2",
       "align": "center",
       "border": "no-border-left",
@@ -39,7 +39,7 @@
     "columns": [{
       "title": "ly guaranteed imp",
       "type": "number",
-      "columnHeaderStyles": "bold grey-bg type-xs",
+      "columnHeaderStyles": "caps bold grey-bg type-xs center-align",
       "format": "numberOldStyle",
       "editable": false,
       "callbackKey": "16/17Callback",
@@ -49,7 +49,7 @@
     }, {
       "title": "rc avg cpm",
       "type": "number",
-      "columnHeaderStyles": "bold grey-bg type-xs",
+      "columnHeaderStyles": "caps bold grey-bg type-xs center-align",
       "format": "numberOldStyle",
       "editable": false,
       "callbackKey": "16/17Callback",
@@ -59,7 +59,7 @@
     }, {
       "title": "deal phase",
       "type": "string",
-      "columnHeaderStyles": "bold grey-bg type-xs",
+      "columnHeaderStyles": "caps bold grey-bg type-xs center-align",
       "format": "none",
       "editable": false,
       "callbackKey": "16/17Callback",
@@ -69,7 +69,7 @@
     }, {
       "title": "16/17 Dollars",
       "type": "number",
-      "columnHeaderStyles": "bold grey-bg type-xs",
+      "columnHeaderStyles": "caps bold grey-bg type-xs center-align",
       "format": "currencyOldStyle",
       "editable": true,
       "editableColor": "editable-bg",
@@ -80,7 +80,7 @@
     }, {
       "title": "cy budget dollars",
       "type": "number",
-      "columnHeaderStyles": "bold grey-bg type-xs",
+      "columnHeaderStyles": "caps bold grey-bg type-xs center-align",
       "format": "currencyOldStyle",
       "editable": false,
       "editableColor": "editable-bg",
@@ -91,7 +91,7 @@
     }, {
       "title": "ly budget dollars",
       "type": "number",
-      "columnHeaderStyles": "bold grey-bg type-xs",
+      "columnHeaderStyles": "caps bold grey-bg type-xs center-align",
       "format": "currencyOldStyle",
       "editable": false,
       "editableColor": "editable-bg",
@@ -102,7 +102,7 @@
     }, {
       "title": "base guaranteed imp",
       "type": "number",
-      "columnHeaderStyles": "bold grey-bg type-xs",
+      "columnHeaderStyles": "caps bold grey-bg type-xs center-align",
       "format": "percentOldStyle",
       "editable": true,
       "editableColor": "editable-bg",
@@ -113,7 +113,7 @@
     }, {
       "title": "cy guaranteed imp",
       "type": "number",
-      "columnHeaderStyles": "bold grey-bg type-xs",
+      "columnHeaderStyles": "caps bold grey-bg type-xs center-align",
       "format": "percentOldStyle",
       "editable": true,
       "editableColor": "editable-bg",

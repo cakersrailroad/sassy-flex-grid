@@ -9,6 +9,9 @@
   margin-top: -1px;
   margin-right: -1px;
   overflow: hidden;
+  .opacity-0 {
+    opacity: 0 !important;
+  }
 }
 
 .tier2-column {
@@ -36,10 +39,6 @@
   .editable-bg {
     background-color: transparent !important;
   }
-}
-
-.float-right-auto {
-  margin-left: auto;
 }
 
 .edit-input-text {
