@@ -9,7 +9,7 @@ export const hello: angular.IComponentOptions = {
     $http.get('/assets/portal_modeling.json').then(dat => {
       let portalModeling = []
       _.each(dat.data, (property, i) => {
-        if (i < 200) {
+        if (i < 20) {
           property._id = i;
           property._isFiltered = true;
           property._collapseIcon = "sms-glyph-arrow_carrot-2dwnn_alt";
@@ -21,6 +21,11 @@ export const hello: angular.IComponentOptions = {
 
           property._beforePrimaryIcon = "star";
           property._afterPrimaryIcon = "delete";
+
+          property._hoverIconPrimary = i % 2 === 0 ? "sms-glyph-arrow_carrot-2dwnn_alt": '';
+          property._hoverIconSecondary = i % 3 === 0 ? "sms-glyph-arrow_carrot-2dwnn_alt h3": '';
+
+
           portalModeling.push(property);
         }
       });

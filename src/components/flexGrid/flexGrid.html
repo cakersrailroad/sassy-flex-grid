@@ -1,8 +1,9 @@
 <div class="component">
   <div class="">
     <div class="flex">
-      <div class="{{::$ctrl.config.rowHeaderDefaults.width}} px1  left-align tier1-column"></div>
-      <div class="{{::column.width}} caps end-align px1 py1 table-cell center tier2-column overflow-auto" ng-repeat="column in $ctrl.config.columns track by $index">
+      <div class="{{::$ctrl.config.rowHeaderDefaults.width}} {{::$ctrl.config.columns[0].columnHeaderStyles}} px1  left-align tier1-column"></div>
+      <div class="{{::column.width}} {{::column.columnHeaderStyles}} caps end-align px1 py1 table-cell center tier2-column overflow-auto"
+        ng-repeat="column in $ctrl.config.columns track by $index">
         <span class="end-align">{{::column.title}}</span>
       </div>
     </div>
@@ -24,6 +25,10 @@
             <span class="{{row[$ctrl.config.rowHeaderDefaults.tertiaryTextStyleKey]}}">{{row[$ctrl.config.rowHeaderDefaults.tertiaryTextKey]}}</span>
           </div>
           <i ng-if="row[$ctrl.config.rowHeaderDefaults.afterPrimaryIconKey]" class="mr1 {{::row[$ctrl.config.rowHeaderDefaults.afterPrimaryIconKey]}}"></i>
+          <div class="float-right-auto">
+            <i ng-if="row[$ctrl.config.rowHeaderDefaults.hoverIconPrimaryKey]" class="mr1 {{::row[$ctrl.config.rowHeaderDefaults.hoverIconPrimaryKey]}}"></i>
+            <i ng-if="row[$ctrl.config.rowHeaderDefaults.hoverIconSecondaryKey]" class="mr1 {{::row[$ctrl.config.rowHeaderDefaults.hoverIconSecondaryKey]}}"></i>
+          </div>
         </div>
       </div>
       <!-- individual columns in the table -->
