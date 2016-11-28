@@ -2,7 +2,16 @@
 # Sassy Flex Grid
 A complete Angular.js 1.5.x flexable and customizable grid
 
-#Getting started
+### Getting started
+##### Dependencies:
+##
+    The following are the dependencies that need to be installed in order for the grid to work properly
+    AngularJs: 1.5.x
+    sassy-numbers-utility: "github:cinbcuniversal/sassy-number-utility"
+    sassy-rxjs-input: "github:cinbcuniversal/sassy-rxjs-input"
+    sassy-third-party-injectable: "github:cinbcuniversal/sassy-thirdParty-injectable"
+    sassypam: "github:cinbcuniversal/sassypam"
+
 Grab the sources with  npm or download from [Github:](git@github.com:CINBCUniversal/sassy-flex-grid.git):
 
 
