@@ -1,31 +1,34 @@
 
 # Sassy Flex Grid
-A complete Angular.js 1.5.x flexable and customizable grid
+A complete Angular.js 1.5.x flexible and customizable grid
 
 ### Getting started
 ##### Dependencies:
-##
-    The following are the dependencies that need to be installed in order for the grid to work properly
-    AngularJs: 1.5.x
-    sassy-numbers-utility: "github:cinbcuniversal/sassy-number-utility"
-    sassy-rxjs-input: "github:cinbcuniversal/sassy-rxjs-input"
-    sassy-third-party-injectable: "github:cinbcuniversal/sassy-thirdParty-injectable"
-    sassypam: "github:cinbcuniversal/sassypam"
 
-Grab the sources with  npm or download from [Github:](git@github.com:CINBCUniversal/sassy-flex-grid.git):
-
-
-Install "flexGridComponent" with npm and save it in your package.json.
-For Example :
-
+The following are the dependencies that need to be installed in order for the grid to work properly:
 ```sh
-$ npm install --save git@github.com:CINBCUniversal/sassy-flex-grid.git
+    AngularJs
+    Sassy-numbers-utility
+    Sassy-rxjs-input
+    Sassy-third-party-injectable
+    Sassypam
 ```
 
-After installation include the following
+Install Dependencies with npm 
+
+```sh
+npm install --save angular CINBCUniversal/sassy-numbers-utility CINBCUniversal/sassy-rxjs-input CINBCUniversal/sassy-third-party-injectable CINBCUniversal/sassypam
+```
+
+Install "flexGridComponent" with npm and save it in your package.json.
+For Example:
+
+```sh
+ npm install --save CINBCUniversal/sassy-flex-grid
+```
+
+After installation include the following in your html:
 ```html
-    node_modules/sassy-flex-grid/dist/flexGridComponent-app.css AND
-    node_modules/sassy-flex-grid/dist/flexGridComponent-app.js
 <script src="node_modules/sassy-flex-grid/dist/flexGridComponent-app.js"></script>
 <link href="node_modules/sassy-flex-grid/dist/flexGridComponent-app.css" rel="stylesheet">
 ```
@@ -35,30 +38,26 @@ Include `flexGridComponent` module in your app:
 For example :
 
 ```javascript
-<!--angular.module('app', [-->
-<!--    'flexGridComponent'-->
-<!--]);-->
+angular.module('app', ['flexGridComponent']);
 ```
 
  There are three entry points to the Grid
     1) Data
     2) Config
     3) Callback Functions
-    
-    ```html
-        <flex-grid 
-            data="$ctrl.portalModeling" 
-            config="$ctrl.configData.config" 
-            callback="$ctrl.portalModelingCallback">
-        </flex-grid>
 
+```javascript
+    <flex-grid 
+       data="$ctrl.portalModeling" 
+       config="$ctrl.configData.config" 
+       callback="$ctrl.portalModelingCallback">
+    </flex-grid>
 ```
-    
-1.  Data
-    Data needs to be in a flat structure, if you need parent child hirechy, that can be set in the configrations. All the     keys starting with _ are reserved as grid configrations.
-
+## Data: ##
+Data needs to be in a flat structure, if you need parent child hirechy, that can be set in the configrations. All the  keys starting with _ are reserved as grid configrations. For example:
+```javascript
     this.portalModeling = [{
-            "_id": "1287",       // required by the grid to be consumed by track by in angular repeats
+            "_id": "1287",       // required by the grid and is consumed by track by in angular repeats
             "_isItCollapse": false, // Boolean value that will collapse/uncollapse the row
             "_isFiltered": true,  // Boolean value that will filter/un-filter the row
             "_showCollapseIcon": false, //Boolean value to show hide collapse Icon
@@ -84,11 +83,19 @@ For example :
             "17/18 client mix": 1.5,
             "17/18 effective ROC": 6.0985
     }]
+    
+```
 
-2. Configs:
-    Configs are how you can set values and interations to the grid, there are 3 type of configs that are required.
-        1. rowHeaderDefaults: this the conffiguration object that corrospends to the column where primary, secondary, tertiary text reside. all the options begining with _ corriesponds with data object above. Here are all the options available;
-            {
+----------
+
+
+## Configs: ##
+Configs are how you can customize the grid to your need, there is 3 type of configs that are required.
+
+#### rowHeaderDefaults: 
+This the configuration object that corresponds to the column where primary, secondary, tertiary text reside. all the options beginning with _ corresponds with data object above. Here are all the options available:
+```javascript    
+           this.configs = {
                 "rowHeaderDefaults": {
                   "primaryTextKey": "agency name", // Primary text key value that will be shown on the screen
                   "secondaryTextKey": "agency_id", // Secondary text key value that will be shown next to Primary text
@@ -107,17 +114,22 @@ For example :
                   "tertiaryTextStyleKey": "_tertiaryTextStyle"   // key value that has style classes
                 }
             }
+```
 
-
-        2. rowConfig: these are row level configuration options;
+####rowConfig: 
+These are row level configuration options;
+```javascript
             {"rowConfig":
                 {
                   "rowStyles": "lt-blue-hover-bg white-bg" //classes that will be applied to the row level, classes can be seperated by space
                 }
             }
+```
         
         
-        3.columns: these are columns level configs, columns is an array of object and each object in the column array will corrospond with each column.
+####columns: 
+These are columns level configs, columns is an array of object and each object in the column array will correspond with each column:
+```javascript
         {
             "columns": [{
               "title": "ly guaranteed imp", //title of the column
@@ -130,10 +142,18 @@ For example :
               "columnStyles": "center-align border-top border-bottom border-right border-left"  //classes that will be applied to the column level, classes can be seperated by space
             }
         }
-        
-3. Callback; this is an object of functions that will be triggered when the user interacts with the grid;
-        Here is an example of what this can look like
+```
+    
 
+
+----------
+
+
+## Callback: ##
+
+This is an object of functions that will be triggered when the user interacts with the grid;
+        Here is an example of what this can look like:
+```javascript
         this.portalModelingCallback = {
               normalDollars: (changeObj: any, change: number) => {
                 var index = this.portalModeling.findIndex(function (o: any) { return o._id === changeObj._id; });
@@ -165,18 +185,17 @@ For example :
                 $scope.$evalAsync();  //need to trigger the digest cycle after each change.
               }
             }
-
 ```
 
 ## Row Header Defaults Configs
-|Param 	|Details   	|
-|----	|----	|
+|Param     |Details       |
+|----    |----    |
 |primaryTextKey| A key value that matches header of row in the data set |
 |secondaryTextKey|A key value that matches text next to the header in the data set |
-|tertiaryTextKey | A key value that matches text underneath to the header in the data set	|
-|primaryTextStyleKey | A string of classes that can be applied to primary text, seperated by space	|
-|secondaryTextStyleKey | A key in the dataset to string of classes that can be applied to secondary text, seperated by space |
-|tertiaryTextStyleKey | A key in the dataset to  string of classes that can be applied to tertiary text, seperated by space |
+|tertiaryTextKey | A key value that matches text underneath to the header in the data set    |
+|primaryTextStyleKey | A string of classes that can be applied to primary text, separated by space    |
+|secondaryTextStyleKey | A key in the dataset to string of classes that can be applied to secondary text, separated by space |
+|tertiaryTextStyleKey | A key in the dataset to  string of classes that can be applied to tertiary text, separated by space |
 |beforePrimaryIconKey | A key to the icon value in the dataset |
 |afterPrimaryIconKey | A key to the icon value in the dataset |
 |isCollapseKey | A key to the boolean value in the dataset |
@@ -184,8 +203,32 @@ For example :
 |collapseCallback | A key to the name of the fun to run on clicking collapse icon|
 |collapseIcon | A key to the icon value in the dataset|
 |indentKey | A key to the indent level value in the dataset|
-|width | flexbox with in the data set can be flex-1 .. flex-6 |
+|width | flexbox within the data set can be flex-1 .. flex-6 |
 |isFilterdKey | A key to the boolean value in the dataset|
+
+## rowConfigs
+|Param     |Details       |
+|----    |----    |
+|rowStyles| A string of classes that will be appended to the row styles|
+
+## Column configs
+|Param     |Details       |
+|----    |----    |
+|title| title of the column|
+|type| Type of value the number will display|
+|editable|should this column be editable|
+|callbackKey|callback function name that will be triggered when the user makes edits|
+|objectKey|Key value that has this value in your data object|
+|columnStyles|classes that will be applied to the column level, classes can be separated by space|
+|format| angular js filter that will be applied to this column *|
+|width|flex box style flex width **|
+
+```
+* available (convertStringToNumber, currencyOldStyle, numberOldStyle, percentOldStyle)
+** available (flex-1, flex-2, flex-3, flex-4. flex-5. flex-6)
+```
+
+
 
 ## Development server
 Run `npm run serve` for a dev server. Navigate to `http://localhost:3000/`. The app will automatically reload if you change any of the source files.
@@ -194,7 +237,3 @@ Run `npm run serve` for a dev server. Navigate to `http://localhost:3000/`. The 
 ## Build
 
 Run `gulp build:component` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-
-
-
