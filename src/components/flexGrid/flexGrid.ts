@@ -18,7 +18,6 @@ class FlexGridController {
    * @param {Object} column - that column this record belongs to
    */
   updateColumnValue(obj: Object, value: number, column: any): void {
-    console.log(`${column.title} edited, ${column.objectKey} changed from ${obj[column.objectKey]} to ${value}`);
     this.callback[column.callbackKey](obj, value, column.objectKey);
   }
 

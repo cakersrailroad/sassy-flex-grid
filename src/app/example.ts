@@ -47,7 +47,6 @@ export const example: angular.IComponentOptions = {
       });
       this.portalModeling = portalModeling;
       let parentAgency = _.where(this.portalModeling, { _indent: 0 });
-      console.log(`length of parent agency shown is ${parentAgency.length}`);
     });
 
     /**
@@ -70,7 +69,6 @@ export const example: angular.IComponentOptions = {
         $scope.$evalAsync();
       },
       collapseCallback: (row: any, ) => {
-        console.log(row, 'collapse clicked');
         let didReachedNext: Boolean = true;
         this.portalModeling = _.each(this.portalModeling, (dat: any, i: number) => {
           if (i > row._id && didReachedNext) {
