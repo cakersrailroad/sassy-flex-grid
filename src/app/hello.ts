@@ -1,6 +1,6 @@
 export const hello: angular.IComponentOptions = {
   template: require('./hello.html'),
-  controller: function ($http: angular.IHttpService, $scope: angular.IScope, _: any) { // eslint-disable-line babel/object-shorthand
+  controller: function ($http: angular.IHttpService, $scope: angular.IScope, _: any, StateManagerService: any) { // eslint-disable-line babel/object-shorthand
 
     /**
       * setting up the inital config data for portal modeling example
