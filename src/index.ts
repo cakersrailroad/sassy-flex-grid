@@ -14,7 +14,7 @@ import '../node_modules/sassy-rxjs-input/inputs/inputManager.module.js';
 import '../node_modules/sassy-rxjs-input/inputs/inputField.component.js';
 import '../node_modules/sassy-rxjs-input/inputs/selectableCell.directive.js';
 
-import { hello } from './app/hello';
+import { example } from './app/example';
 import  flexGridComponent  from './components/flexGrid/flexGrid';
 
 import './index.scss';
@@ -23,4 +23,4 @@ export const app: string = 'app';
 
 angular
     .module(app, [flexGridComponent, 'NumbersUtil', 'thirdparty', 'InputManager'])
-    .component('app', hello);
+    .component('app', example);

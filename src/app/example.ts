@@ -1,5 +1,5 @@
-export const hello: angular.IComponentOptions = {
-  template: require('./hello.html'),
+export const example: angular.IComponentOptions = {
+  template: require('./example.html'),
   controller: function ($http: angular.IHttpService, $scope: angular.IScope, _: any) { // eslint-disable-line babel/object-shorthand
 
     /**
