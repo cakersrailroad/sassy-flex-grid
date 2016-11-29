@@ -3,10 +3,53 @@ import * as angular from 'angular';
 
 import './flexGrid.scss';
 
+interface Config {
+  rowHeaderDefaults: RowHeaderDefaults;
+  rowConfig: RowConfig;
+  columns: Array<Columns>;
+}
+
+interface RowHeaderDefaults {
+  primaryTextKey: string;
+  secondaryTextKey: string;
+  tertiaryTextKey: string;
+  isCollapseKey: string;
+  showCollapseIconKey: string;
+  collapseCallback: string;
+  collapseIcon: string;
+  indentKey: string;
+  width: string;
+  isFilterdKey: string;
+  beforePrimaryIconKey: string;
+  afterPrimaryIconKey: string;
+  primaryTextStyleKey: string;
+  secondaryTextStyleKey: string;
+  tertiaryTextStyleKey: string;
+  hoverIconPrimaryKey: string;
+  hoverIconSecondaryKey: string;
+}
+
+interface RowConfig {
+  rowStyles: string;
+}
+
+interface Columns {
+  title: string;
+  type: string;
+  columnHeaderStyles: string;
+  format: string;
+  editable: Boolean;
+  editableColor: string;
+  callbackKey: string;
+  objectKey: string;
+  width: string;
+  columnStyles: string;
+}
+
 
 class FlexGridController {
   callback: Object;
-  config: any;
+  config: Config;
 
   constructor() { }
 

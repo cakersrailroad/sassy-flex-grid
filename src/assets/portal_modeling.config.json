@@ -1,7 +1,6 @@
 {
   "config": {
     "rowHeaderDefaults": {
-      "objectKey": "name-of-the-header",
       "primaryTextKey": "parent_agency_id",
       "secondaryTextKey": "agency_id",
       "tertiaryTextKey": "created_at",
@@ -22,19 +21,6 @@
     },
     "rowConfig": {
       "rowStyles": "lt-blue-hover-bg"
-    },
-    "columnsDefaults": {
-      "type": "number",
-      "columnHeaderStyles": "caps bold grey-bg type-xs center-align",
-      "width": "flex-2",
-      "align": "center",
-      "border": "no-border-left",
-      "format": "none",
-      "percision": "2",
-      "textStyle": "uppercase",
-      "editable": false,
-      "styleChangeOnEdit": "bold",
-      "callbackKey": "16/17Callback"
     },
     "columns": [{
       "title": "ly guaranteed imp",
