@@ -17,7 +17,7 @@ import '../node_modules/sassy-rxjs-input/inputs/selectableCell.directive.js';
 
 import '../node_modules/sassy-state-manager/src/stateManager.service.js';
 
-import { hello } from './app/hello';
+import { example } from './app/example';
 import { PortalModelingActionsService } from './app/portalModelingActionsService';
 import flexGridComponent from './components/flexGrid/flexGrid';
 
@@ -27,5 +27,5 @@ export const app: string = 'app';
 
 angular
     .module(app, [flexGridComponent, 'NumbersUtil', 'thirdparty', 'InputManager', 'StateManagerService'])
-    .component('app', hello)
+    .component('app', example)
     .service('app', PortalModelingActionsService);
