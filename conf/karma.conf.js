@@ -3,16 +3,17 @@ const conf = require('./gulp.conf');
 module.exports = function (config) {
   const configuration = {
     basePath: '../',
-    singleRun: true,
-    autoWatch: false,
+    singleRun: false,
+    autoWatch: true,
     logLevel: 'INFO',
     junitReporter: {
       outputDir: 'test-reports'
     },
     browsers: [
-      'PhantomJS'
+      'Chrome'
     ],
     frameworks: [
+      'jasmine-jquery',
       'jasmine',
       'es6-shim'
     ],
@@ -43,9 +44,11 @@ module.exports = function (config) {
     },
     plugins: [
       require('karma-jasmine'),
+      require('karma-jasmine-jquery'),
       require('karma-junit-reporter'),
       require('karma-coverage'),
       require('karma-phantomjs-launcher'),
+      require('karma-chrome-launcher'),
       require('karma-phantomjs-shim'),
       require('karma-ng-html2js-preprocessor'),
       require('karma-webpack'),

@@ -269,11 +269,13 @@
       "indentKey": "_indent",
       "width": "flex-5",
       "isFilterdKey": "filterKey",
-      "beforePrimaryIconKey": "name-of-key",
+      "beforePrimaryIconKey": "_beforePrimaryIcon",
       "afterPrimaryIconKey": "_afterPrimaryIcon",
-      "primaryTextStyleKey": "primaryTextStyle",
-      "secondaryTextStyleKey": "secondaryTextStyle",
-      "tertiaryTextStyleKey": "tertiaryTextStyle"
+      "primaryTextStyleKey": "_primaryTextStyle",
+      "secondaryTextStyleKey": "_secondaryTextStyle",
+      "tertiaryTextStyleKey": "_tertiaryTextStyle",
+      "hoverIconPrimaryKey": "_hoverIconPrimary",
+      "hoverIconSecondaryKey": "_hoverIconSecondary"
     },
     "rowConfig": {
       "rowStyles": "lt-blue-hover-bg"
