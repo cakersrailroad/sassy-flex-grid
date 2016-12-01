@@ -3,8 +3,8 @@ const conf = require('./gulp.conf');
 module.exports = function (config) {
   const configuration = {
     basePath: '../',
-    singleRun: false,
-    autoWatch: true,
+    singleRun: true,
+    autoWatch: false,
     logLevel: 'INFO',
     junitReporter: {
       outputDir: 'test-reports'
