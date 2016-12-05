@@ -25,6 +25,7 @@ export const example: angular.IComponentOptions = {
 
           property._beforePrimaryIcon = 'star';
           property._afterPrimaryIcon = 'delete';
+          property._editableStyle = i % 3 === 0 ? 'bold' : '';
 
           property._hoverIconPrimary = i % 2 === 0 ? 'sms-glyph-arrow_carrot-2dwnn_alt' : '';
           property._hoverIconSecondary = i % 3 === 0 ? 'sms-glyph-arrow_carrot-2dwnn_alt h3' : '';
@@ -46,7 +47,6 @@ export const example: angular.IComponentOptions = {
         }
       });
       this.portalModeling = portalModeling;
-      let parentAgency = _.where(this.portalModeling, { _indent: 0 });
     });
 
     /**

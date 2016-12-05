@@ -42,7 +42,7 @@
           <span ng-if="::column.format === 'convertStringToNumber'" class="align-middle">{{row[column.objectKey] | convertStringToNumber}}</span>
         </div>
         <div ng-if="::column.editable" class="edit-input-text">
-          <edit-input value="row[column.objectKey]" property-to-update="row[column.objectKey]" record="row" action="$ctrl.updateColumnValue(record, elementValue, column)"
+          <edit-input class="{{row[column.editableStyleKey]}}" value="row[column.objectKey]" property-to-update="row[column.objectKey]" record="row" action="$ctrl.updateColumnValue(record, elementValue, column)"
             display-format='{"filter": "{{column.format}}"}' editing-format='{"filter": "stringToNumber", "precision": 0}'>
           </edit-input>
         </div>

@@ -21,7 +21,6 @@ npm install --save angular CINBCUniversal/sassy-numbers-utility CINBCUniversal/s
 ```
 
 Install "flexGridComponent" with npm and save it in your package.json.
-For Example:
 
 ```sh
  npm install --save CINBCUniversal/sassy-flex-grid
@@ -32,9 +31,8 @@ After installation include the following in your html:
 <script src="node_modules/sassy-flex-grid/dist/flexGridComponent-app.js"></script>
 <link href="node_modules/sassy-flex-grid/dist/flexGridComponent-app.css" rel="stylesheet">
 ```
-in your html. Then,
 
-Include `flexGridComponent` module in your app:
+Then include `flexGridComponent` module in your app:
 For example :
 
 ```javascript
@@ -42,9 +40,12 @@ angular.module('app', ['flexGridComponent']);
 ```
 
  There are three entry points to the Grid
-    1) Data
-    2) Config
-    3) Callback Functions
+ 
+
+ 1. Data
+ 2. Config
+ 3. Callback Functions
+
 
 ```javascript
     <flex-grid 
@@ -54,21 +55,22 @@ angular.module('app', ['flexGridComponent']);
     </flex-grid>
 ```
 ## Data: ##
-Data needs to be in a flat structure, if you need parent child hirechy, that can be set in the configrations. All the  keys starting with _ are reserved as grid configrations. For example:
+Data needs to be in a flat structure, If you need parent child hierarchy, that can be set in the configurations. All the  keys starting with "_" are reserved as grid configurations.
 ```javascript
     this.portalModeling = [{
             "_id": "1287",       // required by the grid and is consumed by track by in angular repeats
-            "_isItCollapse": false, // Boolean value that will collapse/uncollapse the row
+            "_isItCollapse": false, // Boolean value that will collapsed/uncollapsed the row
             "_isFiltered": true,  // Boolean value that will filter/un-filter the row
             "_showCollapseIcon": false, //Boolean value to show hide collapse Icon
-            "_collapseCallback": "callback", //Name of the callBack funtion that will be triggered when the user clicks on the collapse Icon
+            "_collapseCallback": "callback", //Name of the callBack function that will be triggered when the user clicks on the collapse Icon
             "_collapseIcon": "sms-glyph-arrow_carrot-2dwnn_alt", //sassy pam Icon class for the collapse Icon
-            "_indent": 0,      //what level to indent the primaryText, can be used to show hiarechy
+            "_indent": 0,      //what level to indent the primaryText, can be used to show hierarchy
             "_beforePrimaryIcon": "star", //Icon that can be displayed on the left side of Primary text
             "_afterPrimaryIcon": "delete", //Icon that can be displayed on the right side of Primary text
             "_primaryTextStyle": "black bold" //Primary text style classes
-            "_secondaryTextStyle": "black Itallic" //secondary text style classes
+            "_secondaryTextStyle": "black Italic" //secondary text style classes
             "_tertiaryTextStyle": "black lighter" //tertiary text style classes
+            "_editableStyle": "bold"  //classes that will be applied to the column level, when the user makes an edit, this will only appear if editable config is set to true
             
             "agency name": "Total", 
             "16/17 Quintile": 5,
@@ -90,18 +92,18 @@ Data needs to be in a flat structure, if you need parent child hirechy, that can
 
 
 ## Configs: ##
-Configs are how you can customize the grid to your need, there is 3 type of configs that are required.
+Configs are how you can customize the grid to your needs, there is 3 types of configs that are required.
 
 #### rowHeaderDefaults: 
-This the configuration object that corresponds to the column where primary, secondary, tertiary text reside. all the options beginning with _ corresponds with data object above. Here are all the options available:
+This configuration object  corresponds to the column where primary, secondary, tertiary text reside. all the options beginning with "_" corresponds with data object above. Here are all the options available:
 ```javascript    
            this.configs = {
                 "rowHeaderDefaults": {
                   "primaryTextKey": "agency name", // Primary text key value that will be shown on the screen
                   "secondaryTextKey": "agency_id", // Secondary text key value that will be shown next to Primary text
                   "tertiaryTextKey": "created_at",  // Tertiary text key value that will be shown under the Primary text
-                  "isCollapseKey": "_isItCollapsed", //Key value that will collapse/uncollapse the row
-                  "showCollapseIconKey": "_showCollapseIcon", //Key value that willl show collapse Icon
+                  "isCollapseKey": "_isItCollapsed", //Key value that will collapsed/uncollapsed the row
+                  "showCollapseIconKey": "_showCollapseIcon", //Key value that will show collapse Icon
                   "collapseCallback": "_collapseClicked", //callback fun that will be triggered upon click on collapse icon
                   "collapseIcon": "_collapseIcon", //key value that contains the collapse Icons
                   "indentKey": "_indent", //key value that has indention level
@@ -121,14 +123,14 @@ These are row level configuration options;
 ```javascript
             {"rowConfig":
                 {
-                  "rowStyles": "lt-blue-hover-bg white-bg" //classes that will be applied to the row level, classes can be seperated by space
+                  "rowStyles": "lt-blue-hover-bg white-bg" //classes that will be applied to the row level, classes can be separated by space
                 }
             }
 ```
         
         
 ####columns: 
-These are columns level configs, columns is an array of object and each object in the column array will correspond with each column:
+These are columns level configs, column is an array of object and each objects in the column array will correspond with each column:
 ```javascript
         {
             "columns": [{
@@ -136,10 +138,11 @@ These are columns level configs, columns is an array of object and each object i
               "type": "number",           //Type of value the number will display
               "format": "numberOldStyle", //angular js filter that will be applied to this column, available(convertStringToNumber, currencyOldStyle, numberOldStyle, percentOldStyle)
               "editable": true,  //should this column be editable
-              "callbackKey": "16/17Callback", //callback function name that will be triggered when the user makes an edits 
+              "callbackKey": "16/17Callback", //callback function name that will be triggered when the user makes an edits
+              "editableStyleKey": "_editableStyle",  //classes that will be applied to the column level, classes can be separated by space
               "objectKey": "ly_guaranteed_imp", //Key value that has this value in your data object
               "width": "flex-2", //flex box style flex width, available(flex-1, flex-2, flex-3, flex-4. flex-5. flex-6)
-              "columnStyles": "center-align border-top border-bottom border-right border-left"  //classes that will be applied to the column level, classes can be seperated by space
+              "columnStyles": "center-align border-top border-bottom border-right border-left"  //classes that will be applied to the column level, classes can be separated by space
             }
         }
 ```
@@ -220,6 +223,7 @@ This is an object of functions that will be triggered when the user interacts wi
 |callbackKey|callback function name that will be triggered when the user makes edits|
 |objectKey|Key value that has this value in your data object|
 |columnStyles|classes that will be applied to the column level, classes can be separated by space|
+|editableStyleKey|classes that will be applied to the column level, when the user makes an edit, this will only appear if editable config is set to true|
 |format| angular js filter that will be applied to this column *|
 |width|flex box style flex width **|
 
@@ -237,3 +241,4 @@ Run `npm run serve` for a dev server. Navigate to `http://localhost:3000/`. The 
 ## Build
 
 Run `gulp build:component` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
